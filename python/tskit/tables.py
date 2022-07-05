@@ -4125,3 +4125,14 @@ class TableCollection(metadata.MetadataProvider):
             store_pairs=store_pairs,
             store_segments=store_segments,
         )
+
+    # https://github.com/tskit-dev/tskit/issues/2060
+    def reorder(nodes=None, individuals=None, populations=None):
+        node_map=None
+        individuals_map=None
+        populations_map=None
+        return ReorderMap(
+            nodes=node_map,
+            individuals= individuals_map,
+            populations=populations_map,
+        )
